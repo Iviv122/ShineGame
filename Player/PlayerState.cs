@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerState : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerState : MonoBehaviour
     [SerializeField] float ColHeight;
     [SerializeField] float ColWidth;
     [SerializeField] LayerMask ground;
+    public event Action OnGroundTouch;
     public void Update()
     {
         HandleState();
@@ -19,6 +21,7 @@ public class PlayerState : MonoBehaviour
         if (IsOnGround())
         {
             state = PlayerStates.Grounded;
+            OnGroundTouch?.Invoke();
         }
         else
         {
