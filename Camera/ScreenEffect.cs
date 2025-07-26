@@ -11,7 +11,4 @@ abstract public class ScreenEffect : MonoBehaviour
     {
         OnEnd?.Invoke();
     }
-    protected void OnDestroy() {
-        StopAllCoroutines();
-    }
 }

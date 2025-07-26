@@ -20,19 +20,15 @@ public class DashController : MonoBehaviour
     }
     public void TryDash()
     {
-        if (rb != null)
+        if (canDash)
         {
-            if (canDash)
+            if (state)
             {
-                if (state)
-                {
-                    Dash();
-                }
-                state = !state;
-                line.Switch();
+                Dash();
             }
+            state = !state;
+            line.Switch();
         }
-
     }
     private void ChargeDash()
     {

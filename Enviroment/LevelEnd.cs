@@ -8,17 +8,14 @@ public class LevelEnd : MonoBehaviour
     [SerializeField, Tag] string PlayerTag;
     [SerializeField] ScreenEffect effect;
     [SerializeField] float EffectTime;
-    [SerializeField] EndBus endBus;
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == PlayerTag)
         {
-            endBus.End();
-            End();
+            Translate();
         }
     }
-    void End()
+    void Translate()
     {
         effect.OnEnd += Go;
         effect.DoEffect(EffectTime);
