@@ -1,8 +1,9 @@
 using UnityEngine;
+using VContainer;
 
 public class DashController : MonoBehaviour
 {
-    [SerializeField] InputManager input;
+    InputManager input;
     [SerializeField] PlayerState PlayerState;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] DirectionDraw line;
@@ -10,10 +11,15 @@ public class DashController : MonoBehaviour
     Dash dash;
     private bool state = false;
     private bool canDash = false;
+    [Inject]
+    public void Construct(InputManager inputManager)
+    {
+        input = inputManager;
+        input.Attack += TryDash;
+    }
     private void Awake()
     {
         dash = new ThrustDash();
-        input.Attack += TryDash;
         PlayerState.OnGroundTouch += ChargeDash;
 
         DisChargeDash();
@@ -46,5 +52,10 @@ public class DashController : MonoBehaviour
     {
         dash.Move(rb);
         DisChargeDash();
+    }
+    private void OnDestroy()
+    {
+        input.Attack -= TryDash;
+        PlayerState.OnGroundTouch -= ChargeDash;
     }
 }
