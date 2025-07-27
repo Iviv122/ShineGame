@@ -13,7 +13,5 @@ public class GameLifetimeScope : LifetimeScope
         builder.RegisterComponentInHierarchy<LevelEnd>();
         builder.RegisterComponentInHierarchy<PlayerFreeze>();
         builder.RegisterComponentInHierarchy<DashController>();
-
-        builder.RegisterComponentInHierarchy<DashCharger>();
     }
 }
