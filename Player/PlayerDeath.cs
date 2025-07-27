@@ -10,10 +10,7 @@ public class PlayerDeath : MonoBehaviour
     }
     public void Die()
     {
-        if (DeathBus != null)
-        {
-            DeathBus.Die();
-        }
+        DeathBus.Die();
         Destroy(gameObject);
     }
 }

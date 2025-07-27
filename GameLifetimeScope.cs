@@ -12,6 +12,7 @@ public class GameLifetimeScope : LifetimeScope
         builder.RegisterComponentInHierarchy<ScreenEffects>();
         builder.RegisterComponentInHierarchy<LevelEnd>();
         builder.RegisterComponentInHierarchy<PlayerFreeze>();
+        builder.RegisterComponentInHierarchy<PlayerDeath>();
         builder.RegisterComponentInHierarchy<DashController>();
     }
 }

@@ -35,13 +35,11 @@ public class ScreenEffects : MonoBehaviour
     }
     private void Restart()
     {
-        /*
         fadeIn.DoEffect(1);
         fadeIn.OnEnd += () =>
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         };
-        */
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
