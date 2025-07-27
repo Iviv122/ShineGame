@@ -8,6 +8,7 @@ public class DashController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] DirectionDraw line;
     [SerializeField] ParticleSystem ReadyParticle;
+    private Transform _transform;
     Dash dash;
     private bool state = false;
     private bool canDash = false;
@@ -23,6 +24,8 @@ public class DashController : MonoBehaviour
         PlayerState.OnGroundTouch += ChargeDash;
 
         DisChargeDash();
+
+        _transform = rb.transform;
     }
     private void TryDash()
     {
@@ -50,7 +53,7 @@ public class DashController : MonoBehaviour
     }
     private void Dash()
     {
-        dash.Move(rb);
+        dash.Move(rb,_transform);
         DisChargeDash();
     }
     private void OnDestroy()

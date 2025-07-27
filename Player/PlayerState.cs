@@ -12,6 +12,10 @@ public class PlayerState : MonoBehaviour
     [SerializeField] float ColWidth;
     [SerializeField] LayerMask ground;
     public event Action OnGroundTouch;
+    private Transform _transform;
+    private void Awake() {
+        _transform = transform;
+    }
     public void Update()
     {
         HandleState();
@@ -30,12 +34,12 @@ public class PlayerState : MonoBehaviour
     }
     private bool IsOnGround()
     {
-        return Physics2D.BoxCast(transform.position, new Vector3(ColWidth, ColHeight), 0, Vector2.down, Heigth, ground);
+        return Physics2D.BoxCast(_transform.position, new Vector3(ColWidth, ColHeight), 0, Vector2.down, Heigth, ground);
     }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + Vector3.down * Heigth, new Vector3(ColWidth, ColHeight));
+        Gizmos.DrawWireCube(_transform.position + Vector3.down * Heigth, new Vector3(ColWidth, ColHeight));
     }
 }
 public enum PlayerStates

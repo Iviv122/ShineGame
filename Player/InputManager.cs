@@ -12,7 +12,6 @@ public class InputManager
     public event Action Restart;
     public InputManager()
     {
-
         inputs = new();
 
         inputs.Player.Move.performed += OnMove;

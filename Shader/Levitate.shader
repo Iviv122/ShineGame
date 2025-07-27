@@ -60,8 +60,6 @@ Shader "Unlit/Levitate"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                //i.uv.x += cos(_Time*_Speed) * _Offset;
-                //i.uv.y += sin(_Time*_Speed) * _Offset;
                 fixed4 col = tex2D(_MainTex, i.uv);
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
