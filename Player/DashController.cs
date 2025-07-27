@@ -24,7 +24,7 @@ public class DashController : MonoBehaviour
 
         DisChargeDash();
     }
-    public void TryDash()
+    private void TryDash()
     {
         if (canDash)
         {
@@ -36,13 +36,13 @@ public class DashController : MonoBehaviour
             line.Switch();
         }
     }
-    private void ChargeDash()
+    public void ChargeDash()
     {
         canDash = true;
         var emission = ReadyParticle.emission;
         emission.enabled = true;
     }
-    private void DisChargeDash()
+    public void DisChargeDash()
     {
         canDash = false;
         var emission = ReadyParticle.emission;
