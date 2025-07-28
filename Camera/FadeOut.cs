@@ -11,7 +11,6 @@ public class FadeOut : ScreenEffect
     }
     private IEnumerator Effect()
     {
-
         var col = img.color;
         while (col.a > 0)
         {

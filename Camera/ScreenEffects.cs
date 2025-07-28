@@ -29,19 +29,10 @@ public class ScreenEffects : MonoBehaviour
     {
         fadeIn.DoEffect(0.5f);
         SceneManager.LoadSceneAsync(endBus.NextLevel);
-        //fadeIn.OnEnd += () =>
-        //{
-        //    SceneManager.LoadScene(endBus.NextLevel);
-        //};
     }
     private void Restart()
     {
         fadeIn.DoEffect(0.5f);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        //fadeIn.OnEnd += () =>
-        //{
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //};
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
