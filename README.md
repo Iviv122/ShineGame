@@ -1,4 +1,5 @@
 # Small platformer game in Unity ver 6000.0.45f1
+ Whole gameplay made around dashes and their updates
  demo link: https://iviv122.itch.io/shine
 ## Controls
 - Left Mouse Button - Dash
